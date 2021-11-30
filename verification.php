@@ -43,8 +43,8 @@ session_start();
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@123#";
+        $mail->Username="ur email";
+        $mail->Password="ur Password";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     
