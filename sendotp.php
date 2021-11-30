@@ -43,14 +43,14 @@ session_start();
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@123#";
+        $mail->Username="your email";
+        $mail->Password="your password";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     
      
        
-        $mail->setFrom("bankproject87@gmail.com",'Verification Team');
+        $mail->setFrom("bankproject87@gmail.com",'Verification Team'); //change email
         $mail->addAddress($to);
         $mail->addReplyTo("bankproject87@gmail.com");
         
