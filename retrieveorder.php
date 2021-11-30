@@ -190,8 +190,8 @@ if(isset($_POST['changestatus']))
             $mail->isSMTP();  
             $mail->Host="smtp.gmail.com";
             $mail->SMTPAuth=true;
-            $mail->Username="bankproject87@gmail.com";
-            $mail->Password="Bank@123#";
+            $mail->Username="Ur Email";
+            $mail->Password="Ur Password";
             $mail->SMTPSecure='tls';
             $mail->Port=587;
         
