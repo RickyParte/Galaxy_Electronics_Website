@@ -240,8 +240,8 @@ function mailsend($to,$name,$msg,$sub)
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@12345#";
+        $mail->Username="ur@gmail.com";
+        $mail->Password="ur";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     
