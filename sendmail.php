@@ -9,10 +9,10 @@ session_start();
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-        $to=$_SESSION['mail'];
+    $to=$_SESSION['mail'];
     // if(isset('send'))
     // {
-       if(mailsend($to))
+       if(mailsend($to)){
             echo "yes";
         }
         else{
@@ -31,16 +31,16 @@ session_start();
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@123#";
+        $mail->Username="ur@gmail.com";
+        $mail->Password="ur";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     
      
        
-        $mail->setFrom("bankproject87@gmail.com",'Delivery Team');
+        $mail->setFrom("ur@gmail.com",'Delivery Team');
         $mail->addAddress($to);
-        $mail->addReplyTo("bankproject87@gmail.com");
+        $mail->addReplyTo("ur@gmail.com");
         
             
         $mail->isHTML(true);                                 

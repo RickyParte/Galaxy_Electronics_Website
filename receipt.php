@@ -28,6 +28,7 @@ $pin=$row['pincode'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Receipt</title>
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="js/pdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
@@ -37,10 +38,12 @@ $pin=$row['pincode'];
 <body>
     <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row">
-        
+        <div class="col-md-6">
         <a href="cart.php"><h3><i class="bi bi-arrow-left-circle-fill pe-3"></i>Go Back</h3></a>
+        </div>
+        
 
-            <div class="col-md-12 text-right  mb-3">
+            <div class="col-md-4 text-right  mb-3">
                 <button class="btn btn-primary mt-3" id="download"> download pdf</button>
                 <a href="exit.php"><button class="btn btn-primary mt-3">Log Out</button></a>
             </div>
@@ -155,9 +158,13 @@ $pin=$row['pincode'];
                                                     <td class="text-right"><?php echo $row['gst']; ?></td>
                                                 </tr>
                                                 <tr>
+                                                    <th class="text-left">Delivery Charges: <span class="font-weight-normal"></span></th>
+                                                    <td class="text-right">Rs. 100</td>
+                                                </tr>
+                                                <tr>
                                                     <th class="text-left">Total:</th>
                                                     <td class="text-right text-primary">
-                                                    <h5 class="font-weight-semibold"><?php echo $row['finalamount']; ?></h5>
+                                                    <h5 class="font-weight-semibold"><?php echo $row['finalamount']+100; ?></h5>
                                                     </td>
                                                 </tr>
                                                 <?php

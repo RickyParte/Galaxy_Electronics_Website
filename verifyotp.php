@@ -1,9 +1,9 @@
 <?php
 session_start();
- $con=mysqli_connect("localhost","root","","galaxyelectronic");
+include 'connection.php';
  $otp = $_POST['otp'];
 $email=$_SESSION['EMAIL'];
- $result=mysqli_query($con,"select OTP from otp where Email='$email' && OTP='$otp'");
+ $result=mysqli_query($conn,"select OTP from otp where Email='$email' && OTP='$otp'");
  $count=mysqli_num_rows($result);
  if($count>0)
  {

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 // include ('createotp.php');
     require 'phpmailer/PHPMailer.php';
@@ -12,20 +12,22 @@ session_start();
         
     // if(isset('send'))
     // {
-        $con=mysqli_connect("localhost","root","","galaxyelectronic");
+        include 'connection.php';
         $email = $_POST['email'];
     
-        $result=mysqli_query($con,"select * from register where email='$email'");
+        $result=mysqli_query($conn,"select * from register where email='$email'");
         $count=mysqli_num_rows($result);
         if($count>0)
         {
-            $_SESSION['EMAIL1']=$email;
-            $otp=rand(1000,9999);
+            $_SESSION['email']=$email;
+            $otp=rand(100000,999999);
             
-            mysqli_query($con,"update register set otp='$otp' where email='$email'");
+            mysqli_query($conn,"update register set otp='$otp' where email='$email'");
             $body="Your OTP is  ".$otp;
-            mailsend($email,'OTP For New Password',$body);
-            echo "yes";
+          mailsend($email,'OTP For New Password',$body);
+          echo "yes";
+            
+           
         }
         else{
             echo "not_exist";
@@ -43,8 +45,8 @@ session_start();
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@123#";
+        $mail->Username="ur@gmail.com";
+        $mail->Password="ur";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     

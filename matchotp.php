@@ -1,9 +1,9 @@
 <?php
 session_start();
- $con=mysqli_connect("localhost","root","","galaxyelectronic");
+include 'connection.php';
  $otp = $_POST['otp'];
 $email=$_SESSION['EMAIL1'];
- $result=mysqli_query($con,"select otp from forgot where email='$email' && otp='$otp'");
+ $result=mysqli_query($conn,"select otp from forgot where email='$email' && otp='$otp'");
  $count=mysqli_num_rows($result);
  if($count>0)
  {

@@ -60,6 +60,10 @@ if(isset($_POST['buy']))
    header("Location: order.php");
 }
 
+if(isset($_POST['moreinfo']))
+{
+    header("Location: shoppingcart.php");
+}
 
 
 

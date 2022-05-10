@@ -2,12 +2,14 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Animated Login Form</title>
+      <title> Login Form</title>
+  <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
       <link rel="stylesheet" href="css/logstyle.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    </head>
-   <body>
+   <body style="background: linear-gradient(135deg, #0cd1e0, #b23cfd)">
       <div class="container">
+  
          <header>Login Form</header>
          <form action="" method="POST">
             <div class="input-field">
@@ -25,9 +27,10 @@
          <div class="forgot">
          <h4> <a href="ForgotPassword.php">Forgot Password</a></h4>
          </div>
-        
+
       </div>
       <script>
+         // Show Password For Login Admin
          var input = document.querySelector('.pswrd');
          var show = document.querySelector('.show');
          show.addEventListener('click', active);
@@ -49,8 +52,10 @@
 session_start();
 include 'connection.php';
 $user=$_SESSION['IS_LOGIN'];
+// Check Login
 if(isset($_SESSION['IS_LOGIN']))
 {
+   // Check Right User Entered or Not
     if(isset($_POST['submit']))
     {
 

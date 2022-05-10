@@ -12,18 +12,18 @@ session_start();
         
     // if(isset('send'))
     // {
-        $con=mysqli_connect("localhost","root","","galaxyelectronic");
+        include 'connection.php';
         $email = $_POST['email'];
     
-        $result=mysqli_query($con,"select * from forgot where email='$email'");
+        $result=mysqli_query($conn,"select * from forgot where email='$email'");
         $count=mysqli_num_rows($result);
         if($count>0)
         {
             $_SESSION['EMAIL1']=$email;
             $otp=rand(100000,999999);
             
-            mysqli_query($con,"update forgot set otp='$otp' where email='$email'");
-            $body="Your OTP is  ".$otp;
+            mysqli_query($conn,"update forgot set otp='$otp' where email='$email'");
+            $body="Hiii User, /n OTP is sent on your registred email. /n if any query then contact with us. Your OTP is  ".$otp."/n Thank You";
             mailsend($email,'OTP For New Password',$body);
             echo "yes";
         }
@@ -43,16 +43,16 @@ session_start();
         $mail->isSMTP();  
         $mail->Host="smtp.gmail.com";
         $mail->SMTPAuth=true;
-        $mail->Username="bankproject87@gmail.com";
-        $mail->Password="Bank@123#";
+        $mail->Username="ur@gmail.com";
+        $mail->Password="ur";
         $mail->SMTPSecure='tls';
         $mail->Port=587;
     
      
        
-        $mail->setFrom("bankproject87@gmail.com",'Forgot Password');
+        $mail->setFrom("urproject87@gmail.com",'Forgot Password');
         $mail->addAddress($to);
-        $mail->addReplyTo("bankproject87@gmail.com");
+        $mail->addReplyTo("urproject87@gmail.com");
         
             
         $mail->isHTML(true);                                 

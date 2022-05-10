@@ -7,13 +7,15 @@
     <title>Forgot Password</title>
 </head>
 <style type="text/css">
+	
+	
 	.login-form {
-		width: 340px;
+		width: 420px;
     	margin: 90px auto;
 	}
     .login-form form {
     	margin-bottom: 15px;
-        background: #f7f7f7;
+        background: #FDFDFD ;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
     }
@@ -29,26 +31,29 @@
         font-weight: bold;
     }
 </style>
-<body>
+<body style="background-color: #3B7EDE;">
 <div class="login-form">
     <form  method="post">
-        <h2 class="text-center">Forgot Password Verification</h2>       
+        <b><h2 class="text-center text-primary">Forgot Password Verification</h2></b>     
         <div class="form-group first_box">
-            <input type="text" id="email" class="form-control" placeholder="Email" name="email" required="required">
+            <input type="text" id="email" class="form-control input-group-lg" placeholder="Email" name="email" required="required">
 			<span id="email_error" class="field_error"></span>
         </div>
         <div class="form-group first_box">
             <button type="button" class="btn btn-primary btn-block" onclick="send_otp()">Send OTP</button>
         </div>
         <div class="form-group second_box">
-            <input type="text" id="otp" class="form-control" placeholder="OTP" required="required">
+            <input type="text" id="otp" class="form-control input-group-lg" placeholder="OTP" required="required">
 			<span id="otp_error" class="field_error"></span>
         </div>
+		
         <div class="form-group second_box">
-            <button type="button" class="btn btn-primary btn-block" onclick="submit_otp()">Submit OTP</button>
-        </div>
+            <button type="button" class="btn btn-primary btn-primary btn-block" onclick="submit_otp()">Submit OTP</button>
+		</div>
     </form>
 </div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
