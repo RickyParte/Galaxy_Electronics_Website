@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="css/style2.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
+<body style="background: linear-gradient(135deg, #9b59b6, #71b7e6);">
   <?php
   session_start();
   if(!isset($_SESSION['IS_LOGIN']))
     {
 	    header("Location: Admin.php");
     }
-  include('Navbar.php'); 
+  include('AdminNavbar.php'); 
  
   ?>
  
@@ -102,11 +102,15 @@ if(isset($_POST['submitt'])){
     move_uploaded_file($filepath,$destfile);
   
 
-    $updatequery="UPDATE newproduct SET productname='$productname',productprice='$productprice',productwaranty='$productwarranty',productimg='$destfile',productfeature='$productfeature' WHERE productid= '$productid'";
+    $updatequery="update newproduct SET productname='$productname',productprice='$productprice',productwaranty='$productwarranty',productimg='$destfile' WHERE productid= '$productid'";
   $res=mysqli_query($conn,$updatequery);
 
   if($res){
-    
+    ?>
+    <script>
+       alert("YES");
+     </script>
+     <?php
 
    }else{
      ?>

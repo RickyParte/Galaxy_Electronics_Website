@@ -9,22 +9,10 @@ session_start();
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-        
+    $to=$_SESSION['mail'];
     // if(isset('send'))
     // {
-        include 'connection.php';
-        $email = $_POST['email'];
-    
-        $result=mysqli_query($conn,"select * from otp where Email='$email'");
-        $count=mysqli_num_rows($result);
-        if($count>0)
-        {
-            $_SESSION['EMAIL']=$email;
-            $otp=rand(100000,999999);
-            
-            mysqli_query($conn,"update otp set OTP='$otp' where Email='$email'");
-            $body="Your OTP is  ".$otp;
-            mailsend($email,'OTP Verification',$body);
+       if(mailsend($to)){
             echo "yes";
         }
         else{
@@ -34,7 +22,7 @@ session_start();
     
    
    
-   function mailsend($to,$subject,$msg)
+   function mailsend($to)
    {
     try{
     
@@ -50,15 +38,15 @@ session_start();
     
      
        
-        $mail->setFrom("ur@gmail.com",'Verification Team');
+        $mail->setFrom("ur@gmail.com",'Delivery Team');
         $mail->addAddress($to);
         $mail->addReplyTo("ur@gmail.com");
         
             
         $mail->isHTML(true);                                 
-        $mail->Subject = $subject;
-        $mail->Body    = $msg;
-        $mail->AltBody = 'Please Dont Share OTP with anyone it is harm for you.';
+        $mail->Subject = "Order Delivery";
+        $mail->Body    = "Your Delivery arrived in 5-6 days";
+        $mail->AltBody = 'Please Dont Share information with anyone it is harm for you.';
         
     
         if($mail->send())

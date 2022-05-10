@@ -19,7 +19,7 @@
           <a class="nav-link disable text-warning" aria-current="page" href="Admin.php"><i class="bi bi-speedometer2 pe-3" style="color:white;"></i>DashBoard</a>
           </li>
         <li class="nav-item"> 
-          <a class="nav-link disable text-warning" aria-current="page" href="#"><i class="bi bi-stack pe-3" style="color:white;"></i>Total Stock</a>
+          <a class="nav-link disable text-warning" aria-current="page" href="Update_stock.php"><i class="bi bi-stack pe-3" style="color:white;"></i>Total Stock</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disable text-warning" aria-current="page" href="retrieveorder.php"><i class="bi bi-cart-fill pe-3" style="color:white;"></i>Order Details</a>
@@ -34,7 +34,10 @@
           <a class="nav-link disable text-warning" aria-current="page" href="#"><i class="bi bi-x-circle pe-3" style="color:white;"></i>Delete Products</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link disable text-warning" aria-current="page" href="Products.php"><i class="bi bi-list-check pe-3" style="color:white;"></i>Components List</a>
+          <a class="nav-link disable text-warning" aria-current="page" href="products.php"><i class="bi bi-cart pe-3" style="color:white;"></i>See Products</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link disable text-warning" aria-current="page" href="componentadd.php"><i class="bi bi-list-check pe-3" style="color:white;"></i>Components List</a>
           </li>
           <li class="nav-item">
           <a class="nav-link active  text-warning" aria-current="page" href="Logout.php"><i class="bi bi-box-arrow-right pe-3" style="color:white;"></i>Logout</a>

@@ -1,10 +1,34 @@
 <?php
 session_start();
+error_reporting(0);
+include 'connection.php';
 if(!isset($_SESSION['Loginid']))
 {
     header("Location: registeruser.php");
 }
 $tenantid=$_SESSION['Loginid'];
+$select="Select * from orders where tenantid='$tenantid'";
+$runs=mysqli_query($conn,$select);
+if(mysqli_num_rows($runs)>0)
+{
+  while($row=mysqli_fetch_array($runs))
+  {
+    $pincode=$row['pincode'];
+    $address=$row['address'];
+  }
+}
+
+$select1="Select * from register where tenant_id='$tenantid'";
+$runs1=mysqli_query($conn,$select1);
+while($row=mysqli_fetch_array($runs1))
+{
+  $fname=$row['firstname'];
+    $lname=$row['lastname'];
+  $email=$row['email'];
+  $mobile=$row['mobile'];
+  
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -14,6 +38,7 @@ $tenantid=$_SESSION['Loginid'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>order Details</title>
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
 <style>
     body{
@@ -25,7 +50,7 @@ $tenantid=$_SESSION['Loginid'];
     <div class="container mt-4 bg-light">
     <form action="" method="POST">
 <div class="row pt-4">
-  <div class="col-md-8 mb-4 ">
+  <div class="col-md-6 mb-4 ">
     <div class="card mb-4">
       <div class="card-header py-3">
         <h5 class="mb-0">Biling details</h5>
@@ -37,14 +62,14 @@ $tenantid=$_SESSION['Loginid'];
             <div class="col">
               <div class="form-outline">
               <label class="form-label" for="form7Example1">First name</label>
-                <input type="text" name="fname" id="form7Example1" class="form-control" required />
+                <input type="text" name="fname" id="form7Example1" class="form-control" value="<?php echo $fname ?>"  required disabled/>
                 
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
               <label class="form-label" for="form7Example2">Last name</label>
-                <input type="text"  name="lname" id="form7Example2" class="form-control" required />
+                <input type="text"  name="lname" id="form7Example2" class="form-control" value="<?php echo $lname ?>"  required disabled/>
                 
               </div>
             </div>
@@ -54,39 +79,38 @@ $tenantid=$_SESSION['Loginid'];
             <div class="col">
             <div class="form-outline mb-4">
           <label class="form-label" for="form7Example5">Email</label>
-            <input type="email" name="email" id="form7Example5" class="form-control" required />
+            <input type="email" name="email" id="form7Example5" class="form-control" value="<?php echo $email ?>" required disabled />
             
           </div>
             </div>
             <div class="col">
             <div class="form-outline mb-4">
           <label class="form-label" for="form7Example6">Phone</label>
-            <input type="text" name="phonenum" id="form7Example6" class="form-control" required />
-           
+            <input type="text" name="phonenum" id="form7Example6"  class="form-control" value="<?php echo $mobile ?>" required disabled />
           </div>
             </div>
         </div>
 
         <div class="form-outline mb-4">
           <label class="form-label" for="form7Example4">Address</label>
-            <input type="text" name="address" id="form7Example4" class="form-control" required  />
+            <input type="text" name="address" id="form7Example4" class="form-control" value="<?php echo $address ?>"  required  />
             
           </div>
-     
           <div class="row">
               <div class="col">
-                 
           <div class="form-outline mb-4">
           <label class="form-label" for="form7Example4">Pin Code</label>
-            <input type="text" name="pincode" id="form7Example4" class="form-control" required />
+            <input type="text" name="pincode" id="form7Example4" class="form-control" value="<?php echo $pincode ?>"  required />
             
           </div>
           </div>
 
-          <div class="col pt-4">
+          <div class="col">
+          <label class="form-label" for="form7Example4">Delivery Type</label>
           <div class="input-group mb-3">
-  <select class="form-select " name="pay" id="inputGroupSelect01" required >
-    <option selected>Choose...</option>
+    
+  <select class="form-select " name="pay" id="inputGroupSelect01" required>
+    <option value="1">Choose...</option>
     <option value="1">Cash On Delivery</option>
     
   </select>
@@ -97,7 +121,7 @@ $tenantid=$_SESSION['Loginid'];
     </div>
   </div>
 
-  <div class="col-md-4 mb-4">
+  <div class="col-md-6 mb-4">
     <div class="card mb-4">
       <div class="card-header py-3">
         <h5 class="mb-0">Summary</h5>
@@ -106,21 +130,46 @@ $tenantid=$_SESSION['Loginid'];
         <ul class="list-group list-group-flush">
           <li
             class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-            Products:
-            <span>
+            <dl class="row">
+            <strong>Products:</strong> 
+            <span class="text-danger">
             <strong>
-            <!-- Total -->
-             </strong>
+            <?php
+            $retrieve="select * from cartcount where tenantid='$tenantid'";
+            $query=mysqli_query($conn,$retrieve);
+            $delivery=100;
+            while($row=mysqli_fetch_array($query))
+            {
+            $total1+=$row['producttotalamount'];
+            $gst1=18/100*$total1;
+            echo $row['productname'].' * '.$row['productquantity'].' Qty = RS. '.$row['producttotalamount'].'<br>';
+            }
+            ?>
+            </strong>
             </span>
+            </dl>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            GST Amount:
-            <!-- <span><strong>GST</strong></span> -->
+            <strong>GST Amount:</strong> 
+            <span class="text-danger"><strong>
+            <?php
+            echo 'RS. '.$gst1.'.00';
+            ?>
+            </strong></span>
             
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-            Shipping From
-            <span><strong>Galaxy Electronics</strong></span>
+            <strong>Delivery Charges:</strong> 
+            <span class="text-danger"><strong>
+            <?php
+            echo 'RS. '.$delivery.'.00';
+            ?>
+            </strong></span>
+            
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+            <strong> Shipping From</strong>
+            <span class="text-primary"><strong>Galaxy Electronics</strong></span>
             
           </li>
           <li
@@ -131,13 +180,13 @@ $tenantid=$_SESSION['Loginid'];
                 <p class="mb-0">(including 18% GST)</p>
               </strong>
             </div>
-            <span><strong>
-              <!-- Final Amount -->
+            <span class="text-primary"><strong>
+            <?php  echo 'RS. '.($gst1+$total1+$delivery); ?>
           </strong></span>
           </li>
         </ul>
       
-        <button name="confirmorder" class="btn btn-primary  btn-lg btn-block">Make Purchase</button>
+        <button type="submit" name="confirmorder" class="btn btn-primary  btn-lg btn-block">Make Purchase</button>
   
     
       </div>
@@ -158,21 +207,40 @@ $tenantid=$_SESSION['Loginid'];
 </body>
 </html>
 <?php
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/Exception.php';
+require 'phpmailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 include 'connection.php';
+
 if(isset($_POST['confirmorder']))
 {
-    $firstname=$_POST['fname'];
-    $lastname=$_POST['lname'];
+  
+      
+  // if(isset('send'))
+  // {
+    
+    $firstname=$fname;
+    $lastname=$lname;
     $address=$_POST['address'];
     $pin=$_POST['pincode'];
-    $email=$_POST['email'];
-    $mobilen=$_POST['phonenum'] ;
+    $email=$email;
+    $mobilen=$mobile ;
     $payment=$_POST['pay'];
     $orderid='GLXODR'.rand(10000,99999);
     $_SESSION['order']=$orderid;
     $status="0";
     $check=mysqli_query($conn,"Select producttotalamount from cartcount where tenantid='$tenantid'");
     
+    if(mailsend($email)){
+      echo "yes";
+  }
+  else{
+      echo "not_exist";
+  }
   while($row=mysqli_fetch_array($check))
   {
     $total+=$row['producttotalamount'];
@@ -197,7 +265,6 @@ function saveOrder($tenantid,$firstname,$lastname,$email,$mobilen,$address,$pin,
       <?php
     }
   }
- 
   
 }
 
@@ -216,7 +283,6 @@ function purchaseOrder($tenantid,$orderid)
     '$gst','$finalamount')";
     $runq=mysqli_query($conn,$que);
   }
-   
 }
 
 function deletecart($tenantid)
@@ -226,5 +292,44 @@ function deletecart($tenantid)
   $rundelete=mysqli_query($conn,$delete);
 }
 
+function mailsend($email)
+{
+try{
 
+
+  $mail=new PHPMailer;                  
+  $mail->isSMTP();  
+  $mail->Host="smtp.gmail.com";
+  $mail->SMTPAuth=true;
+  $mail->Username="bankproject87@gmail.com";
+  $mail->Password="Bank@12345#";
+  $mail->SMTPSecure='tls';
+  $mail->Port=587;
+
+
+  $mail->setFrom("bankproject87@gmail.com",'Delivery Team');
+  $mail->addAddress($email);
+  $mail->addReplyTo("bankproject87@gmail.com");
+  
+      
+  $mail->isHTML(true);                                 
+  $mail->Subject = "Order Delivery";
+  $mail->Body    = "Your Delivery arrived in 5-6 days";
+  $mail->AltBody = 'Please Dont Share information with anyone it is harm for you.';
+  
+
+  if($mail->send())
+  {
+    return 1; 
+  }
+  else{
+    return 0;
+  }
+  
+}
+catch (Exception $e){
+echo $e;
+}
+  
+}
 ?>

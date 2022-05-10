@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-.social a {
-  padding: 0 .2em;
-}
+
 
 
 </style>
@@ -41,7 +40,7 @@
           </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link  active" aria-current="page" href="file/GALAXY BROCHURE.pdf"><i class="bi bi-book-half pe-1"></i>Get Brochure</a>
+            <a class="nav-link  active" aria-current="page" href="file/GALAXY BROCHURE.pdf" target="_blank"><i class="bi bi-book-half pe-1"></i>Get Brochure</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  active" aria-current="page" href="AboutUs.php"><i class="bi bi-emoji-smile-fill pe-1"></i>About Us</a>
@@ -51,9 +50,18 @@
           </li>
         </ul>
         <div class="social">
-          <a href="https://wa.me/+918928007199" id="share-wa" class="sharer button"><i class="fa fa-3x fa-whatsapp"></i></a>
-          <a href="mailto:fs19if043@gmail.com" id="share-em" class="sharer button"><i class="fa fa-3x fa-envelope-square"></i></a>
-          <a href="tel:+918928007199" id="share-em" class="sharer button"><i class="fa fa-3x fa-phone-square"></i></a>
+        <a style="color: #25D366;" href="#!" role="button">
+        <i class="fab fa-whatsapp fa-2x pe-2"></i></a>
+
+<!-- Twitter -->
+      <a style="color: #55acee;" href="#!" role="button">
+      <i class="fas fa-mobile-alt fa-2x pe-2"></i></i>
+      </a>
+
+<!-- Google -->
+      <a style="color: #dd4b39;" href="#!" role="button">
+      <i class="fab fa-google fa-2x"></i></a>
+
 
         </div>
       </div>
@@ -72,8 +80,8 @@
                 We Are provider ems in pune, we began our business from the year of 2017. We provide complete solution for pcb assembly and LED product ,manufacturing ,LED lighting is
                 an energy and cost efficient option that allow for more creative applications than traditional lighting...
                     </p>
-                    <a href="cart.php"><button class="btn btn-primary btn-lg ms-2 mt-2"  type="button"><i class="bi bi-bag pe-3"></i>Buy Products</button></a>
-                    <button class="btn btn-danger btn-lg ms-2 mt-2"  type="button"><i class="bi bi-tv pe-3"></i>View Products</button>
+                    <a href="cart.php"><button class="btn btn-success btn-lg ms-2 mt-2"  type="button"><i class="bi bi-bag pe-3"></i>Buy Products</button></a>
+                    <!-- <button class="btn btn-danger btn-lg ms-2 mt-2"  type="button"><i class="bi bi-tv pe-3"></i>View Products</button> -->
 
           </div>
           </div>
@@ -94,7 +102,7 @@
     <div class="card bg-dark ">
       <img src="src/ark.jpg" class="card-img-top" alt="...">
       <div class="card-body text-center">
-      <strong class="d-inline-block mb-2 text-primary">Client</strong>
+      <strong class="d-inline-block mb-2 text-success">Client</strong>
           <h3 class="mb-0 text-warning">A.R.K India Pvt.Ltd</h3>
           <p class="card-text mb-auto text-light pt-3"><strong>on Time Product Delivery With Quality Products.</strong></p>
           <a href="https://www.arkindia.co.in/" class="btn btn-primary mt-4"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a>
@@ -119,7 +127,7 @@
     <div class="card bg-dark">
       <img src="src/aura.jpg" class="card-img-top" alt="...">
       <div class="card-body text-center">
-      <strong class="d-inline-block mb-2 text-primary">Client</strong>
+      <strong class="d-inline-block mb-2 text-success">Client</strong>
           <h3 class="mb-0 text-warning">AURA LASER FAB</h3>
           <p class="mb-auto text-light pt-3"><strong>Good Experience with Galaxy Electronics.</strong></p>
           <a href="https://www.auralaser.in/" class="btn btn-primary mt-5"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a>
@@ -138,7 +146,7 @@
       <strong class="d-inline-block mb-2 text-success">Client</strong>
           <h3 class="mb-0 text-warning">Impetus Sporting Private Ltd</h3>
           <p class="mb-auto text-light pt-2"><strong>We have best experience with Galaxy Electronics.</strong></p>
-          <a href="https://www.facebook.com/impetus.sporting" class="btn btn-primary mt-3"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a>
+          <a href="https://www.facebook.com/impetus.sporting" class="btn btn-primary mt-2"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a>
       </div>
     </div>
   </div>
@@ -147,10 +155,11 @@
     <div class="card bg-dark">
       <img src="src/admin.png" class="card-img-top" alt="...">
       <div class="card-body text-center">
-      <strong class="d-inline-block mb-2 text-primary">Client</strong>
+      <strong class="d-inline-block mb-2 text-success">Client</strong>
           <h3 class="mb-0 text-warning">Mary Jane</h3>
-          <p class="mb-auto text-light pt-2"><strong>Management Team Is Supportive and Provide Full Support.</strong></p>
-          <a href="#" class="btn btn-primary mt-5"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a>
+          <p class="mb-auto text-light pt-3"><strong> Management Team Is Supportive and Provide Full Support.</strong></p>
+         <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp</p><br>
+          <!-- <a href="#" class="btn btn-primary mt-5"><i class="bi bi-exclamation-circle-fill pe-2"></i>More Info</a> -->
       </div>
     </div>
   </div>
@@ -192,7 +201,7 @@
 <h3 class="text-center" style="color:#3CEA08">How You Benefits ? </h3>
 <div class="row">
   <div class="col-md-3">
-    <div class="card">
+    <div class="card my-2">
     <img src="src/bulb.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Warm white light</h5>
@@ -202,7 +211,7 @@
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card">
+    <div class="card my-2">
     <img src="src/charge.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Energy efficient</h5>
@@ -212,7 +221,7 @@ lifetime and uses up to 90% less energy than traditional sources</p>
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card">
+    <div class="card my-2">
     <img src="src/premium.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Quality of light</h5>
@@ -221,7 +230,7 @@ lifetime and uses up to 90% less energy than traditional sources</p>
     </div>
   </div>
   <div class="col-md-3">
-    <div class="card">
+    <div class="card my-2">
     <img src="src/dim.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Dimmable</h5>
@@ -235,7 +244,7 @@ lifetime and uses up to 90% less energy than traditional sources</p>
     
 
 
-  <footer class="bg-dark">
+<footer class="bg-dark">
   <hr class="text-warning" style="height:2px;">
   <div class="container pt-5">
     <div class="row">
@@ -250,58 +259,80 @@ lifetime and uses up to 90% less energy than traditional sources</p>
       </div>
     
        </div>
-    <div class="row pt-5 text-warning">
-      <div class="col-2">
-        <h5>About</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About Us</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Products</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Broucher</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Reviews</a></li>
-        </ul>
+  
+      <div class="row mt-2 text-center">
+        <h5 class="text-warning">About</h5>
+        <div class="col">
+       <a href="#" class="h6">Home</a>
+       <a class="ps-3 h6" href="#">About Us</a>
+       <a class="ps-3 h6" href="#">Contact Us</a>
+       <a class="ps-3 h6" href="#">Products</a>
+       </div>
+
       </div>
 
-      <div class="col-3">
-        <h5>Achievement</h5>
-        <ul class="nav flex-column">
-          <p class="text-light">
-          1) OUR UNIT IS ISO 9001:2015 CERTIFIED.<br>
-          2) CERTIFICATE OF COMMITMENT. <br>
-          3) MSME CERTIFICATION. <br>
-          4) CERTIFICATE OF QUALITY POLICY.</p>
-        </ul>
-      </div>
+     
+    <div class="row mt-2 text-light text-center">
+    <h5>Subscribe to our newsletter. Monthly digest of whats new and exciting from us.</h5>
 
-      <div class="col-4 offset-1">
+    </div>
+      <div class="row mb-4 ms-auto me-auto col-md-8">
         <form method="POST">
-          <h5>Subscribe to our newsletter</h5>
-          <p>Monthly digest of whats new and exciting from us.</p>
+        
           <div class="d-flex w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Email address</label>
+            <form action="" method="post">
             <input id="newsletter1" type="text" class="form-control" name="email" placeholder="Email address">
-            <input class="btn-primary" type="submit" name="subscribe" value="Subscribe">
+           <button name="subscribe" class="btn btn-primary">Subscribe</button>
+           </form>
           </div>
         </form>
       </div>
-    </div>
+  
 
-    <div class="d-flex justify-content-between pb-2 border-top text-light">
+   
+      <div class="d-flex justify-content-between pb-2 border-top text-light">
       <p>© 2021 Galaxy Electronics, Inc. All rights reserved.</p>
-      <div class="social">
-          <a href="https://wa.me/+918928007199" id="share-wa" class="sharer button"><i class="fa fa-3x fa-whatsapp"></i></a>
-          <a href="mailto:fs19if043@gmail.com" id="share-em" class="sharer button"><i class="fa fa-3x fa-envelope-square"></i></a>
-          <a href="tel:+918928007199" id="share-em" class="sharer button"><i class="fa fa-3x fa-phone-square"></i></a>
+  
+      <div class="social" style=" margin:7px">
+        <!-- Facebook -->
+<a style="color: #25D366;" href="#!" role="button"
+  ><i class="fab fa-whatsapp fa-2x pe-2"></i></a>
+
+<!-- Twitter -->
+<a style="color: #55acee;" href="#!" role="button"
+  ><i class="fas fa-mobile-alt fa-2x pe-2"></i></i
+></a>
+
+<!-- Google -->
+<a style="color: #dd4b39;" href="#!" role="button"
+  ><i class="fab fa-google fa-2x"></i
+></a>
+
+</div>
       </div>
     </div>
     </div>
   </footer>
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
+  rel="stylesheet"
+/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </body>

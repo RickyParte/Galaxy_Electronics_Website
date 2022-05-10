@@ -1,10 +1,12 @@
 <?php
 session_start();
 include 'connection.php';
+// Check Login
 if(!isset($_SESSION['Loginid']))
 {
   header("Location: registeruser.php");
 }
+// Query For Retrieve For Client
 $orderid=$_POST['orderid'];
 $tenantid=$_SESSION['Loginid'];
 $query="select * from orders where tenantid='$tenantid' && orderid='$orderid'";
@@ -28,6 +30,7 @@ $pin=$row['pincode'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Purchase</title>
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="js/pdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
@@ -38,7 +41,7 @@ $pin=$row['pincode'];
     <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row">
         
-        <a href="cart.php"><h3><i class="bi bi-arrow-left-circle-fill pe-3"></i>Go Back</h3></a>
+        <a href="PurchaseHistory.php"><h3><i class="bi bi-arrow-left-circle-fill pe-3"></i>Go Back</h3></a>
 
             <div class="col-md-12 text-right  mb-3">
                 <button class="btn btn-primary mt-3" id="download"> download pdf</button>

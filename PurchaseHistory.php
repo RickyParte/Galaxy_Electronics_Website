@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>purchase History</title>
+  <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example"> 
     <div class="container">
-      <a class="navbar-brand text-info" href="#"><strong>Galaxy Electronics</strong></a>
+      <a class="navbar-brand" style="color:#7d2ae8" href="index.php"><strong>Galaxy Electronics</strong></a>
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,12 +39,21 @@
         </li>
         </ul>
         <div class="social">
-        <a href="#" id="share-wa" class="sharer button"><i class="fa fa-3x fa-whatsapp"></i></a>
-<a href="#" id="share-em" class="sharer button"><i class="fa fa-3x fa-envelope-square"></i></a>
-<a href="tel:+918928007199" id="share-em" class="sharer button"><i class="fa fa-3x fa-phone-square"></i></a>
+        <a style="color: #25D366;" href="#!" role="button">
+        <i class="fab fa-whatsapp fa-2x pe-2"></i></a>
+
+<!-- Twitter -->
+      <a style="color: #55acee;" href="#!" role="button">
+      <i class="fas fa-mobile-alt fa-2x pe-2"></i></i>
+      </a>
+
+<!-- Google -->
+      <a style="color: #dd4b39;" href="#!" role="button">
+      <i class="fab fa-google fa-2x"></i></a>
+
 
 </div>
-      </div>
+</div>
     </div>
   </nav>
   <h3 class="ms-4 mt-4"><a href="cart.php"><i class="bi bi-arrow-left-circle-fill pe-3"></i></a>Go Back</h3>
@@ -85,7 +95,7 @@ $tenant=$_SESSION['Loginid'];
 
   <?php
 
-$query="select * from orders where tenantid='$tenant'";
+$query="select * from orders where tenantid='$tenant' order by time DESC";
 $run=mysqli_query($conn,$query);
 while($row=mysqli_fetch_array($run))
 {
@@ -107,10 +117,10 @@ while($row=mysqli_fetch_array($run))
         <td><?php echo $row['time']; ?></td>
         <td><?php if($row['status']==0)
         {
-          echo "<b>Pending</b>"; 
+          echo "<b class='text-danger'>Pending</b>"; 
         }
         else if($row['status']==1){
-            echo "<b>Dispatched</b>";
+            echo "<b class='text-dark'>Dispatched</b>";
         }
           ?></td>
         <td>
@@ -127,6 +137,10 @@ while($row=mysqli_fetch_array($run))
 </div>
 
 
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

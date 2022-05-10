@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details Order</title>
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
 <body>
-
+<!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
   <a class="navbar-brand text-white" href="admin.php"> <i class="bi bi-lightbulb-fill text-white pe-3" style="font-size:25px;"></i><b>Galaxy Electronics</b></a>
@@ -56,8 +57,12 @@
     </div>
   </div>
 </nav>
-
+<!-- Navbar -->
+<div class="col-md-8 mt-5 ms-5 pt-4">
+<h3><a href="retrieveorder.php"><i class="bi bi-arrow-left-circle-fill pe-3"></i></a>Go Back</h3>
+</div>
 <div class="container mt-5 pt-5">
+<!-- Table For Retreive Order -->
 <div class="table-responsive">
     <table class="table table-lg table-striped">
         <thead class="bg-danger text-light">
@@ -66,18 +71,18 @@
                                     <th>Price Per Product</th>
                                     <th>Quantity</th>
                                     <th>Amount</th>
-             </tr>
+            </tr>
         </thead>
         <tbody>
             <?php
             error_reporting(0);
             include 'connection.php';
-           
+          //  Click On View Order Button 
             if(isset($_POST['vieworder']))
             {
-   
+  
             $orderid=$_POST['orderid'];
-           
+          
             $query1="select * from purchaseorder where orderid='$orderid'";
             $runq=mysqli_query($conn,$query1);
             while($rowu=mysqli_fetch_array($runq))
@@ -100,7 +105,7 @@
     </table>
 </div>
 </div>
-
+<!-- Link -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

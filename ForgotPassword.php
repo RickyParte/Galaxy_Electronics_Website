@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
+	<link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
 <style type="text/css">
 	.login-form {
@@ -54,6 +55,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 <script>
+	// Function for Send Otp
 function send_otp(){
 	var email=jQuery('#email').val();
 	jQuery.ajax({

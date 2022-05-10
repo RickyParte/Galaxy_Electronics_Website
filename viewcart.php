@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Cart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="galaxy.svg" type="image/x-icon">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" aria-label="Eighth navbar example">
@@ -25,14 +25,14 @@
           </li>
           
         <li class="nav-item">
-            <a class="nav-link  active" aria-current="page" href="file/GALAXY BROCHURE.pdf"><i class="bi bi-book-half pe-1"></i>Get Brochure</a>
+            <a class="nav-link  active" aria-current="page" href="file/GALAXY BROCHURE.pdf" target="_blank"><i class="bi bi-book-half pe-1"></i>Get Brochure</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link  active" aria-current="page" href="#"><i class="bi bi-emoji-smile-fill pe-1"></i>About Us</a>
+            <a class="nav-link  active" aria-current="page" href="AboutUs.php"><i class="bi bi-emoji-smile-fill pe-1"></i>About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  active" aria-current="page" href="AboutUs.php"><i class="bi bi-telephone-fill pe-1"></i>Contact Us</a>
+            <a class="nav-link  active" aria-current="page" href="ContactUs.php"><i class="bi bi-telephone-fill pe-1"></i>Contact Us</a>
           </li>
           <li class="nav-item dropdown">
           <a class="nav-link  active" aria-current="page" href="purchasehistory.php"><i class="bi bi-alarm-fill pe-1"></i>Purchase History</a>
@@ -42,23 +42,46 @@
           </li> -->
         </ul>
         <div class="social">
-        <a href="#" id="share-wa" class="sharer button"><i class="fa fa-3x fa-whatsapp"></i></a>
-<a href="#" id="share-em" class="sharer button"><i class="fa fa-3x fa-envelope-square"></i></a>
-<a href="tel:+918928007199" id="share-em" class="sharer button"><i class="fa fa-3x fa-phone-square"></i></a>
+<!-- whatsapp -->
+        <a style="color: #25D366;" href="#!" role="button">
+        <i class="fab fa-whatsapp fa-2x pe-2"></i></a>
+
+<!-- Phone -->
+      <a style="color: #55acee;" href="#!" role="button">
+      <i class="fas fa-mobile-alt fa-2x pe-2"></i></i>
+      </a>
+
+<!-- Mail -->
+      <a style="color: #dd4b39;" href="#!" role="button">
+      <i class="fab fa-google fa-2x"></i></a>
 
 </div>
       </div>
     </div>
   </nav>
 
+ 
+<nav class="bd-subnavbar py-2" aria-label="Secondary navigation">
+  <div class="container d-flex align-items-md-center">
+    <div class="position-relative me-auto">
+    
+  <h3><a href="cart.php"><i class="bi bi-arrow-left-circle-fill pe-3"></i></a>Go Back</h3>
+  </div>
+  <div class="dropdown ms-3">
+    <a href="exit.php"><button class="btn btn-danger" id="bd-versions"  aria-expanded="false" data-bs-display="static">
+    <span class="d-none d-lg-inline"></span>Logout</button></a>
+  
+</div>
+  
+</div>
+
+
+
+  </div>
+</nav>
   <div class="container mt-4">
 <div class="row">
-  <div class="col-md-9">
-<h3><a href="cart.php"><i class="bi bi-arrow-left-circle-fill pe-3"></i></a>Go Back</h3>
-</div>
-<div class="col-md-3">
-<a href="exit.php"><button class="btn btn-primary">Log Out</button></a>
-</div>
+  
   <div class="col-md-8 mt-5">
  
 <div class="table-responsive">
@@ -122,8 +145,8 @@
             
             <td><input type='text' name='pquantity' value="<?php echo $row['productquantity']; ?>"></td>
             <td><?php echo $row['producttotalamount']; ?></td>
-            <td><button class='btn btn-warning' name='update'>Update</button></td>
-            <td><button class='btn btn-primary' name='delete'>Delete</button></td>
+            <td><button class='btn btn-info' name='update'>Update</button></td>
+            <td><button class='btn btn-danger' name='delete'>Delete</button></td>
     
 
             </tr>
@@ -162,7 +185,7 @@
     echo "<h3><b>$total<b></h3>";
     ?>
     <input type="hidden" name="sub" value="<?php echo $total; ?>" ><br>
-    <button name="buy" class="btn btn-primary mt-2">Buy Now</button>
+    <button name="buy" class="btn btn-success mt-2">Buy Now</button>
     
   </form>
   
@@ -176,5 +199,23 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</body>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
+  rel="stylesheet"
+/>
+
+<!-- go back -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+      </body>
 </html>
